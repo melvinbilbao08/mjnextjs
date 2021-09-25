@@ -1,9 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Allison&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap");
+
+:root {
+  /* COLORS */
+  --primaryColor: #ff5252;
+  --transition: all 0.3s ease-in-out;
+  --outlineColor: #29c7ac;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 a {
@@ -13,4 +22,24 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.title {
+  position: relative;
+  cursor: pointer;
+}
+
+.underline {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  background: black;
+  position: absolute;
+  bottom: -4px;
 }
