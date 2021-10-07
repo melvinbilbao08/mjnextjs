@@ -167,8 +167,7 @@ const Navbar = () => {
                 setSidebar(false)
             }
             window.addEventListener('resize', handleResize)
-            return width;
-        },[])
+        },[width])
 
     
     const onScroll = () => {
