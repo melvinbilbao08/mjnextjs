@@ -168,7 +168,7 @@ const Navbar = () => {
             }
             window.addEventListener('resize', handleResize)
             return width;
-        })
+        },[])
 
     
     const onScroll = () => {
@@ -209,7 +209,7 @@ const Navbar = () => {
 
                         {MenuItemsLinks.map(({title, url}, i) => {
                             return(  
-                                <Link href={url} key={i}>
+                                <Link href={url} key={i} passHref>
                                     <motion.a 
                                      onClick={showSideBar}
                                      variants={textMotion}
