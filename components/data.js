@@ -1,8 +1,8 @@
 import { TiSocialFacebook, TiSocialLinkedin, TiSocialGithub } from "react-icons/ti";
 import { DiHtml5, DiCss3, DiSass, DiJsBadge, DiReact, DiGit} from 'react-icons/di'
 import { SiStyledComponents, SiNextDotJs } from "react-icons/si";
-import { FiFramer, FiInstagram } from "react-icons/fi";
-import { educasia, inhouse, mjnextjs } from '../src/projectsSS'
+import { FiFramer, FiInstagram, FiFigma } from "react-icons/fi";
+import { educasia, inhouse, mjnextjs, islakape } from '../src/projectsSS'
 
 
 
@@ -86,6 +86,11 @@ export const Skills = [
       id: 'framer',
       name: 'Framer Motion',
       Icon: FiFramer
+    },
+    {
+      id: 'figma',
+      name: 'Figma',
+      Icon: FiFigma
     }
   ];
 
@@ -125,7 +130,7 @@ export const Projects = [
   },
   {
     title: 'Isla Kape',
-    image: inhouse,
+    image: islakape,
     alt: 'Isla Kape Website',
     info: 'A simple coffee shop website with ordering system',
     techs: ['React.js', 'Next.js', 'Styled Components', 'Framer Motion'],

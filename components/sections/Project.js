@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Projects } from './data';
+import { Projects } from '../data';
 import { VscGithubAlt, VscLinkExternal } from "react-icons/vsc";
 import { motion } from 'framer-motion';
 import useInView from "react-cool-inview";
-import { fadeInRight, fadeInUp } from '../components/animation'
+import { fadeInRight, fadeInUp } from '../animation'
 import Image from 'next/image';
 
 

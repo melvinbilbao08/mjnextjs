@@ -1,15 +1,18 @@
-import styled, {ThemeProvider} from "styled-components"
+import styled, {ThemeProvider, css} from "styled-components"
 import Link from 'next/link'
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
-import { lightTheme, darkTheme, GlobalStyles } from "./themes";
-import { MenuItemsLinks } from '../components/data'
-import { motion, AnimateSharedLayout } from "framer-motion";
-import { textMotion } from "./animation";
+import { lightTheme, darkTheme, GlobalStyles } from '../themes'
+import { MenuItemsLinks } from '../data'
+import { motion } from "framer-motion";
+import { textMotion } from "../animation";
 
 
 const Header = styled.div`
+    position: sticky;
+    top: 0;
+    z-index: 99;
 `;
 
 const Nav = styled.nav`
@@ -20,11 +23,18 @@ const Nav = styled.nav`
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
-
+    transition: var(--transition);
+    
+    ${(props) =>
+    props.isScrolled &&
+    css`
+      background-color: ${(props) => props.theme.body};
+    `}
     
     @media only screen and (max-width: 448px) {
         padding: 0 20px;
     }
+
     
 `;
 
@@ -137,36 +147,55 @@ const LightDarkTheme = styled.div`
 const Navbar = () => {
 
     const [click, setClick] = useState(false);
-    const [theme, setTheme] = useState('dark')
-    const [sidebar, setSidebar] = useState(false)
-    const [width, setWidth] = useState(0)
+    const [theme, setTheme] = useState('dark');
+    const [sidebar, setSidebar] = useState(false);
+    const [width, setWidth] = useState(0);
 
-    const showSideBar = () => setSidebar(!sidebar)
+    const [isScrolled, setIsScrolled] = useState(false);
 
-    const ChangeIcon = () => setClick(!click)
+    const showSideBar = () => setSidebar(!sidebar);
+
+    const ChangeIcon = () => setClick(!click);
 
     const themeToggler = () => {
         theme === 'light' ? setTheme ('dark') : setTheme ('light');
     };
 
     const handleResize = () => setWidth(window.innerWidth)
+        useEffect(() => {
+            if (window.innerWidth > 768) {
+                setSidebar(false)
+            }
+            window.addEventListener('resize', handleResize)
+            return width;
+        })
+
+    
+    const onScroll = () => {
+        const scrollTop = window !== undefined ? window.pageYOffset : 0;
+
+        setIsScrolled(scrollTop > 0)
+
+    }
+
     useEffect(() => {
-        if (window.innerWidth > 768) {
-            setSidebar(false)
+        window.addEventListener('scroll', onScroll, { passive: true})
+        return () =>{
+            window.removeEventListener('scroll', onScroll, { passive: true })
         }
-        window.addEventListener('resize', handleResize)
-        return width;
-    })
+    }, [])
+    
 
     return (
         <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
             <GlobalStyles />
             <Header>
-                <Nav>
+                <Nav isScrolled={ isScrolled }>
                     <TitleLogo 
                      initial={{ y: -100 }}  
                      animate={{ y: 0 }}
                      transition={{delay: 0.2}}
+                     whileHover={{ color: 'var(--outlineColor)' }}
                     >
                         <Link href='/'>
                             <a>MJ.</a>

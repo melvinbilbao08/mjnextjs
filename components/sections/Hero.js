@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from "styled-components"
-import heroImage from '../src/mjpicsart.png'
+import heroImage from '../../src/mjpicsart.png'
 import Image from 'next/image'
-import { FloatingSocmed } from './data';
+import { FloatingSocmed } from '../data';
 import { motion } from 'framer-motion';
 
 

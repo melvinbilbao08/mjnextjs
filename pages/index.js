@@ -1,12 +1,10 @@
 import Head from 'next/head';
-import About from '../components/About';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
-import Hero from '../components/Hero';
-import Navbar from "../components/Navbar";
-import Project from '../components/Project';
-
-
+import Hero from '../components/sections/Hero';
+import Navbar from '../components/sections/Navbar'
+import About from '../components/sections/About'
+import Project from '../components/sections/Project'
+import Contact from '../components/sections/Contact'
+import Footer from '../components/sections/Footer'
 
 export default function Home() {
   return (

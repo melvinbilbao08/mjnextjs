@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Skills } from './data';
+import { Skills } from '../data';
 import { motion } from 'framer-motion'
 import useInView from "react-cool-inview";
-import { fadeInRight, fadeInUp, animationContainer,  } from '../components/animation'
+import { fadeInRight, fadeInUp } from '../animation'
 
 
 
