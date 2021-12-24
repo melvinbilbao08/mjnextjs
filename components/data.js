@@ -132,7 +132,7 @@ export const Projects = [
     title: 'Isla Kape',
     image: islakape,
     alt: 'Isla Kape Website',
-    info: 'A simple coffee shop website with ordering system',
+    info: 'A simple coffee shop website UI',
     techs: ['React.js', 'Next.js', 'Styled Components', 'Framer Motion'],
     links: {
       demo: '',

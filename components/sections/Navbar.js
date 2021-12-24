@@ -1,8 +1,7 @@
 import styled, {ThemeProvider, css} from "styled-components"
 import Link from 'next/link'
 import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
+import { FiSun, FiMoon } from "react-icons/fi";
 import { lightTheme, darkTheme, GlobalStyles } from '../themes'
 import { MenuItemsLinks } from '../data'
 import { motion } from "framer-motion";
@@ -142,11 +141,11 @@ const LightDarkTheme = styled.div`
     display: flex;
     align-items: center;
     cursor: pointer;
+
 `;
 
 const Navbar = () => {
 
-    const [click, setClick] = useState(false);
     const [theme, setTheme] = useState('dark');
     const [sidebar, setSidebar] = useState(false);
     const [width, setWidth] = useState(0);
@@ -155,7 +154,17 @@ const Navbar = () => {
 
     const showSideBar = () => setSidebar(!sidebar);
 
-    const ChangeIcon = () => setClick(!click);
+    const ChangeIcon = () => {
+        if (theme === 'dark'){
+            return(
+                <FiSun size={20}/>
+            )
+        } else {
+            return(
+                <FiMoon size={20}/>
+            )
+        }
+    }
 
     const themeToggler = () => {
         theme === 'light' ? setTheme ('dark') : setTheme ('light');
@@ -210,7 +219,7 @@ const Navbar = () => {
                             return(  
                                 <Link href={url} key={i} passHref>
                                     <motion.a 
-                                     onClick={showSideBar}
+                                     
                                      variants={textMotion}
                                      whileHover="hover"
                                     >
@@ -219,8 +228,8 @@ const Navbar = () => {
                                 
                             )      
                         })}
-                        <LightDarkTheme onClick={themeToggler}>
-                            <FontAwesomeIcon icon={ click ? faMoon : faSun} size="lg" onClick={ChangeIcon} />
+                        <LightDarkTheme onClick={themeToggler} >
+                            {ChangeIcon()}
                         </LightDarkTheme>
                     </MenuItems>
                     <MobileMenuBtn  onClick={showSideBar}>

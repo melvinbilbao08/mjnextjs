@@ -11,6 +11,7 @@ export default function Home() {
     <>
       <Head>
         <title>Melvin John Bilbao | Portfolio</title>
+        <link rel="icon" type="image/png" href="/mjlogo.png" />
       </Head>
      
       <Navbar />

@@ -77,9 +77,3 @@ export const textMotion = {
     
   }
 };
-
-// export const cardHover = {
-//   initial = {
-//     backgrou
-//   }
-// }
