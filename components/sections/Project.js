@@ -135,7 +135,7 @@ const ProjectTechs = styled.small`
 const ProjectLinkContainer = styled.div`
 `;
 const ProjectGithub = styled(motion.a)`
-    margin-right: 15px;
+    margin-left: 15px;
     .icon{
         height: 20px;
         width: 20px;
@@ -200,19 +200,18 @@ function Project() {
                                         })}
                                     </ProjectTechs>
                                     <ProjectLinkContainer>
-                                        <ProjectGithub 
-                                         
-                                         href={links.github}
-                                        >
-                                            <VscGithubAlt className='icon' />
-                                        </ProjectGithub>
                                         <ProjectDemo 
-
                                          href={links.demo}
                                         >
                                             <VscLinkExternal className='icon' />
                                         </ProjectDemo>
-                                    </ProjectLinkContainer>
+                                            
+                                        <ProjectGithub 
+                                         href={links.github}
+                                        >
+                                            <VscGithubAlt className='icon' />
+                                        </ProjectGithub>
+                                    </ProjectLinkContainer>    
                             </ProjectCardInfos>
                         </ProjectCardContainer>
                         )

@@ -113,8 +113,8 @@ export const Projects = [
     info: 'A simple real-estate website design',
     techs: ['React.js', 'Sass', 'Framer Motion'],
     links: {
-      demo: '',
-      github: '',
+      demo: 'https://inhouse-corp.netlify.app/',
+      github: 'https://github.com/melvinbilbao08/inhouse-reactjs',
     },
   },
   {
@@ -124,8 +124,8 @@ export const Projects = [
     info: 'My minimalist portfolio website',
     techs: ['React.js', 'Next.js', 'Styled Components','Framer Motion'],
     links: {
-      demo: '',
-      github: '',
+      demo: 'https://melvinportfolio.netlify.app',
+      github: 'https://github.com/melvinbilbao08/mjnextjs',
     },
   },
   {
